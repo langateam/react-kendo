@@ -1,3 +1,4 @@
+var React = require('react');
 /**
  * Use for all Kendo objects that inherit from kendo.ui.Widget
  *
@@ -52,8 +53,15 @@ var KendoWidgetMixin = function (widget) {
      * Default Kendo widget renderer
      */
     render: function () {
-      var other = _.omit(this.props, 'options');
-      return React.createElement('div', other);
+      var other = _.omit(this.props, [ 'options', 'children' ]);
+      /*
+      console.log('widget', widget);
+      console.log(this.props.children);
+      */
+        
+      return React.DOM.div(other, this.props.children);
+
+      //return React.createElement.apply(this, [ 'div', other ].concat(this.props.children || [ ]));
     }
   };
 };

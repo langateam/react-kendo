@@ -26,9 +26,9 @@
     "url": "https://github.com/tjwebb/react-kendo/issues"
   },
   "homepage": "https://github.com/tjwebb/react-kendo",
-  "dependencies": {
-    "lodash": "^3.3.0",
-    "react": "^0.12.2"
+  "peerDependencies": {
+    "react": "^0.12.2",
+    "lodash": "^3.3.0"
   },
   "devDependencies": {
     "jsdom": "^3.1.2",
