@@ -16,6 +16,7 @@ describe('react-kendo', function () {
   describe('sanity', function () {
   
     before(function (done) {
+      this.timeout(10000);
       env = jsdom.env({
         html: '<div />',
         scripts: [
