@@ -1,6 +1,6 @@
 {
   "name": "react-kendo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Component Library for Kendo UI Widgets",
   "main": "index.js",
   "scripts": {
