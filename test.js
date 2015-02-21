@@ -1,0 +1,3 @@
+describe('react-kendo', function () {
+
+});
