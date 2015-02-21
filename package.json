@@ -1,0 +1,29 @@
+{
+  "name": "react-kendo-ui",
+  "version": "0.12.0",
+  "description": "React Component Library for Kendo UI Widgets",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjwebb/react-kendo-ui.git"
+  },
+  "keywords": [
+    "react",
+    "kendo",
+    "react.js",
+    "react-component",
+    "kendo-ui",
+    "telerik",
+    "components",
+    "widgets"
+  ],
+  "author": "Travis Webb <me@traviswebb.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjwebb/react-kendo-ui/issues"
+  },
+  "homepage": "https://github.com/tjwebb/react-kendo-ui"
+}
