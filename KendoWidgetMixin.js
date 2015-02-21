@@ -18,7 +18,7 @@ var KendoWidgetMixin = function (widget) {
      */
     componentDidMount: function () {
       if (this.props.debug) console.log('kendo widget mounted:', widget);
-      This.props.$widget = $(this.getDOMNode())[widget](this.props.options).data(widget);
+      this.props.$widget = $(this.getDOMNode())[widget](this.props.options).data(widget);
 
     },
 
