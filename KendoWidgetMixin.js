@@ -54,14 +54,7 @@ var KendoWidgetMixin = function (widget) {
      */
     render: function () {
       var other = _.omit(this.props, [ 'options', 'children' ]);
-      /*
-      console.log('widget', widget);
-      console.log(this.props.children);
-      */
-        
       return React.DOM.div(other, this.props.children);
-
-      //return React.createElement.apply(this, [ 'div', other ].concat(this.props.children || [ ]));
     }
   };
 };
