@@ -1,5 +1,5 @@
 {
-  "name": "react-kendo-ui",
+  "name": "react-kendo",
   "version": "0.12.0",
   "description": "React Component Library for Kendo UI Widgets",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjwebb/react-kendo-ui.git"
+    "url": "https://github.com/tjwebb/react-kendo.git"
   },
   "keywords": [
     "react",
@@ -23,7 +23,7 @@
   "author": "Travis Webb <me@traviswebb.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tjwebb/react-kendo-ui/issues"
+    "url": "https://github.com/tjwebb/react-kendo/issues"
   },
-  "homepage": "https://github.com/tjwebb/react-kendo-ui"
+  "homepage": "https://github.com/tjwebb/react-kendo"
 }

@@ -1,4 +1,4 @@
-# react-kendo-ui
+# react-kendo
 
 [![npm version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
@@ -7,11 +7,12 @@
 React Component Library for Kendo UI Widgets. There exists a React Component
 named for every Kendo widget in the
 [kendo.ui](http://docs.telerik.com/kendo-ui/api/javascript/ui/ui) namespace.
+Tested on React 0.12 and KendoUI 2014.3.1411.
 
 ## Install
 
 ```sh
-$ npm install react-kendo-ui
+$ npm install react-kendo
 ```
 
 ```html
@@ -57,9 +58,9 @@ var Workstation = React.createClass({
 ## License
 MIT
 
-[npm-image]: https://img.shields.io/npm/v/react-kendo-ui.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/react-kendo-ui
-[travis-image]: https://img.shields.io/travis/tjwebb/react-kendo-ui.svg?style=flat-square
-[travis-url]: https://travis-ci.org/tjwebb/react-kendo-ui
-[daviddm-image]: http://img.shields.io/david/tjwebb/react-kendo-ui.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/tjwebb/react-kendo-ui
+[npm-image]: https://img.shields.io/npm/v/react-kendo.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/react-kendo
+[travis-image]: https://img.shields.io/travis/tjwebb/react-kendo.svg?style=flat-square
+[travis-url]: https://travis-ci.org/tjwebb/react-kendo
+[daviddm-image]: http://img.shields.io/david/tjwebb/react-kendo.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/tjwebb/react-kendo
