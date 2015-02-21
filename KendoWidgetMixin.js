@@ -53,7 +53,7 @@ var KendoWidgetMixin = function (widget) {
      */
     render: function () {
       var other = _.omit(this.props, 'options');
-      return <div {...other} />;
+      return React.createElement('div', other);
     }
   };
 };
