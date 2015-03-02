@@ -55,6 +55,25 @@ var Workstation = React.createClass({
 });
 ```
 
+## Additional Components
+
+### `React.Kendo.Template`
+
+A React Component for easily creating [Kendo Templates](http://docs.telerik.com/kendo-ui/framework/templates/overview).
+
+var listOptions = {
+  template: function (item) {
+    return React.Kendo.Template(<MyComponent item={item} />);
+  }
+};
+var KendoList = React.createClass({
+  render: function () {
+    return (
+      <React.Kendo.ListView options={listOptions} />
+    );
+  }
+});
+
 ## License
 MIT
 
