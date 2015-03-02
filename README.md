@@ -61,8 +61,7 @@ var Workstation = React.createClass({
 
 A React Component for easily creating [Kendo Templates](http://docs.telerik.com/kendo-ui/framework/templates/overview).
 
-```
-
+```js
 var MyListItem = React.createClass({
   render: function () {
     var item = this.props.item;
