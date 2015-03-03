@@ -61,18 +61,27 @@ var Workstation = React.createClass({
 
 A React Component for easily creating [Kendo Templates](http://docs.telerik.com/kendo-ui/framework/templates/overview).
 
-var listOptions = {
-  template: function (item) {
-    return React.Kendo.Template(<MyComponent item={item} />);
-  }
-};
-var KendoList = React.createClass({
+```js
+var MyListItem = React.createClass({
   render: function () {
+    var item = this.props.item;
     return (
-      <React.Kendo.ListView options={listOptions} />
+      <span>{this.props.item.title}</span>
     );
   }
 });
+var KendoList = React.createClass({
+  render: function () {
+    return (
+      <React.Kendo.ListView options={
+        template: function (item) {
+          return React.Kendo.Template(<MyListItem item={item} />);
+        }
+      } />
+    );
+  }
+});
+```
 
 ## License
 MIT
