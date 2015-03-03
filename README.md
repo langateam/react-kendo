@@ -59,14 +59,15 @@ var Workstation = React.createClass({
 
 ### `React.Kendo.Template`
 
-A React Component for easily creating [Kendo Templates](http://docs.telerik.com/kendo-ui/framework/templates/overview).
+A React Component that represents a [Kendo Template](http://docs.telerik.com/kendo-ui/framework/templates/overview).
+Easily create a Kendo Template from a React Component.
 
 ```js
 var MyListItem = React.createClass({
   render: function () {
     var item = this.props.item;
     return (
-      <span>{this.props.item.title}</span>
+      <span>{item.title}</span>
     );
   }
 });
@@ -76,6 +77,33 @@ var KendoList = React.createClass({
       <React.Kendo.ListView options={
         template: function (item) {
           return React.Kendo.Template(<MyListItem item={item} />);
+        }
+      } />
+    );
+  }
+});
+```
+
+### `React.Kendo.RowTemplate`
+
+Use this component for Kendo Grid [Row
+Templates](http://docs.telerik.com/kendo-ui/api/javascript/ui/grid#configuration-rowTemplate).
+
+```js
+var MyGridRow = React.createClass({
+  render: function () {
+    var row = this.props.row;
+    return (
+      <span>{row.myField}</span>
+    );
+  }
+});
+var KendoList = React.createClass({
+  render: function () {
+    return (
+      <React.Kendo.Grid options={
+        template: function (row) {
+          return React.Kendo.RowTemplate(<MyGridRow row={row} />);
         }
       } />
     );
