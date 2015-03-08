@@ -60,10 +60,14 @@ var Workstation = React.createClass({
 ### `React.Kendo.Template`
 
 A React Component that represents a [Kendo Template](http://docs.telerik.com/kendo-ui/framework/templates/overview).
-Easily create a Kendo Template from a React Component.
+Easily create a Kendo Template from a React Component. Additionally mixin
+`React.Kendo.TemplateMixin`.
 
 ```js
 var MyListItem = React.createClass({
+  mixins: [
+    React.Kendo.TemplateMixin
+  ],
   render: function () {
     var item = this.props.item;
     return (
@@ -91,6 +95,9 @@ Templates](http://docs.telerik.com/kendo-ui/api/javascript/ui/grid#configuration
 
 ```js
 var MyGridRow = React.createClass({
+  mixins: [
+    React.Kendo.TemplateMixin
+  ],
   render: function () {
     var row = this.props.row;
     return (
