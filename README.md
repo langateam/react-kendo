@@ -12,7 +12,7 @@ Tested on React 0.12 and KendoUI 2014.3.1411.
 ## Install
 
 ```sh
-$ npm install react-kendo
+$ npm install react-kendo --save
 ```
 
 ```html
@@ -54,6 +54,17 @@ var Workstation = React.createClass({
   }
 });
 ```
+
+## Properties
+
+### `options`
+The main Kendo options object that is sent into the constructor. e.g.
+`$('#my-splitter').kendoSplitter(options);`
+
+### `tag`
+The `tag` property specifies the html tag that the Kendo widget will be bound
+to. This is `div` by default, but can be set to
+[any tag supported by React](http://facebook.github.io/react/docs/tags-and-attributes.html#html-elements).
 
 ## Additional Components
 
