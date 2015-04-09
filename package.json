@@ -33,6 +33,5 @@
   "devDependencies": {
     "jsdom": "^3.1.2",
     "mocha": "^2.1.0"
-  },
-  "dependencies": {}
+  }
 }
