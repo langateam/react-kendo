@@ -66,6 +66,12 @@ The `tag` property specifies the html tag that the Kendo widget will be bound
 to. This is `div` by default, but can be set to
 [any tag supported by React](http://facebook.github.io/react/docs/tags-and-attributes.html#html-elements).
 
+### `reactive`
+Version 0.13 and later support automatically re-initializing the Kendo Widget
+when the `options` property is updated. This is useful for re-loading Grids
+with new data, among other things. This is `false` by default.
+
+
 ## Additional Components
 
 ### `React.Kendo.Template`
