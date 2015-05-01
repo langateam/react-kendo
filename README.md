@@ -7,7 +7,7 @@
 React Component Library for Kendo UI Widgets. There exists a React Component
 named for every Kendo widget in the
 [kendo.ui](http://docs.telerik.com/kendo-ui/api/javascript/ui/ui) namespace.
-Tested on React 0.12 and KendoUI 2014.3.1411.
+Tested on React 0.13 and KendoUI 2014.3.1411.
 
 ## Install
 
@@ -27,7 +27,7 @@ Please note: Kendo Professional Components require
 ## Usage
 ```js
 var React = require('react');
-React.Kendo = require('react-kendo');
+var k = React.Kendo = require('react-kendo');
 
 /**
  * Instead of, e.g.
@@ -46,10 +46,10 @@ var gridOptions = { /* ... */ };
 var Workstation = React.createClass({
   render: function () {
     return (
-      <React.Kendo.Splitter options={splitterOptions}>
-        <React.Kendo.TreeView options={treeOptions} />
-        <React.Kendo.Grid options={gridOptions} />
-      </React.Kendo.Splitter>
+      <k.Splitter options={splitterOptions}>
+        <k.TreeView options={treeOptions} />
+        <k.Grid options={gridOptions} />
+      </k.Splitter>
     );
   }
 });
@@ -71,6 +71,9 @@ Version 0.13 and later support automatically re-initializing the Kendo Widget
 when the `options` property is updated. This is useful for re-loading Grids
 with new data, among other things. This is `false` by default.
 
+### `debug`
+Set `debug=true` to log detailed information on the lifecycle events of your
+react-kendo component.
 
 ## Additional Components
 
@@ -81,9 +84,10 @@ Easily create a Kendo Template from a React Component. Additionally mixin
 `React.Kendo.TemplateMixin`.
 
 ```js
+var k = React.Kendo;
 var MyListItem = React.createClass({
   mixins: [
-    React.Kendo.TemplateMixin
+    k.TemplateMixin
   ],
   render: function () {
     var item = this.props.item;
@@ -95,9 +99,9 @@ var MyListItem = React.createClass({
 var KendoList = React.createClass({
   render: function () {
     return (
-      <React.Kendo.ListView options={
+      <k.ListView options={
         template: function (item) {
-          return React.Kendo.Template(<MyListItem item={item} />);
+          return k.Template(<MyListItem item={item} />);
         }
       } />
     );
@@ -113,7 +117,7 @@ Templates](http://docs.telerik.com/kendo-ui/api/javascript/ui/grid#configuration
 ```js
 var MyGridRow = React.createClass({
   mixins: [
-    React.Kendo.TemplateMixin
+    k.TemplateMixin
   ],
   render: function () {
     var row = this.props.row;
@@ -125,9 +129,9 @@ var MyGridRow = React.createClass({
 var KendoList = React.createClass({
   render: function () {
     return (
-      <React.Kendo.Grid options={
+      <k.Grid options={
         template: function (row) {
-          return React.Kendo.RowTemplate(<MyGridRow row={row} />);
+          return k.RowTemplate(<MyGridRow row={row} />);
         }
       } />
     );
