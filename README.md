@@ -135,6 +135,36 @@ var KendoList = React.createClass({
 });
 ```
 
+## Supplemental Functions
+
+`react-kendo` also includes some extra functionality that isn't included in
+Kendo. These functions are added to the Kendo components via React mixins.
+
+
+### `Grid.enableDraggableRows(group, options)`
+
+Invoke this function to make Grid rows draggable. This is not possible by
+default in the kendo-ui library.
+
+```js
+var k = React.Kendo;
+var KendoList = React.createClass({
+  componentDidMount: function () {
+    this.refs.grid.enableDraggableRows('myGroup', {
+      drag: function (e) {
+        // some custom stuff
+      }
+    });
+  },
+  render: function () {
+    return (
+      <k.Grid ref='grid' options={...} />
+    );
+  }
+});
+```
+
+
 ## License
 MIT
 
