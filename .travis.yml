@@ -7,6 +7,9 @@ sudo: false
 notifications:
   email: false
 
+before_script:
+  - npm install react lodash
+
 deploy:
   provider: npm
   email: me@traviswebb.com
