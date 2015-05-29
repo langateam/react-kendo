@@ -16,7 +16,7 @@ describe('react-kendo', function () {
   describe('sanity', function () {
   
     before(function (done) {
-      this.timeout(10000);
+      this.timeout(20000);
       env = jsdom.env({
         html: '<div />',
         scripts: [
@@ -30,12 +30,23 @@ describe('react-kendo', function () {
       });
     });
 
-    it('should load kendo.ui widgets', function () {
-      var k = require('./');
-      assert(_.isObject(k));
-      assert(k.Grid);
-      assert(k.Splitter);
-      assert(k.TreeView);
+    describe('kendo.ui', function () {
+      it('should load widgets', function () {
+        var k = require('./');
+        assert(_.isObject(k));
+        assert(k.Grid);
+        assert(k.Splitter);
+        assert(k.TreeView);
+      });
     });
+
+    describe('kendo.mobile.ui', function () {
+      it('should load widgets', function () {
+        var k = require('./');
+        assert(_.isObject(k.mobile));
+        assert(k.mobile.MobileWidget);
+      });
+    });
+
   });
 });
