@@ -6,7 +6,7 @@
 
 React Component Library for Kendo UI Widgets. There exists a React Component
 named for every Kendo widget in the
-[kendo.ui](http://docs.telerik.com/kendo-ui/api/javascript/ui/ui) namespace.
+[kendo.ui](http://docs.telerik.com/kendo-ui/api/javascript/ui/ui) and [kendo.ui.mobile](http://docs.telerik.com/kendo-ui/api/javascript/mobile/application) namespaces.
 Tested on React 0.13 and KendoUI 2014.3.1411.
 
 ## Install
@@ -109,35 +109,6 @@ var KendoList = React.createClass({
 });
 ```
 
-### `React.Kendo.RowTemplate`
-
-Use this component for Kendo Grid [Row
-Templates](http://docs.telerik.com/kendo-ui/api/javascript/ui/grid#configuration-rowTemplate).
-
-```js
-var MyGridRow = React.createClass({
-  mixins: [
-    k.TemplateMixin
-  ],
-  render: function () {
-    var row = this.props.row;
-    return (
-      <span>{row.myField}</span>
-    );
-  }
-});
-var KendoList = React.createClass({
-  render: function () {
-    return (
-      <k.Grid options={
-        template: function (row) {
-          return k.RowTemplate(<MyGridRow row={row} />);
-        }
-      } />
-    );
-  }
-});
-```
 
 ## Supplemental Functions
 
