@@ -44,7 +44,7 @@ describe('react-kendo', function () {
       it('should load widgets', function () {
         var k = require('./');
         assert(_.isObject(k.mobile));
-        assert(k.mobile.MobileWidget);
+        assert(k.mobile.Widget);
       });
     });
 
