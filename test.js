@@ -48,5 +48,13 @@ describe('react-kendo', function () {
       });
     });
 
+    describe('kendo.dataviz.ui', function () {
+      it('should load widgets', function () {
+        var k = require('./');
+        assert(_.isObject(k.dataviz));
+        assert(k.dataviz.Chart);
+      });
+    });
+
   });
 });
