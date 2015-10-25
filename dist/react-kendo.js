@@ -1,18 +1,21 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ReactKendo = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var _ = (window._);
-var React = (window.React);
+(function (global){
+var ReactDOMServer = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 
 var KendoTemplate = function (component) {
-  return React.renderToStaticMarkup(component);
+  return ReactDOMServer.renderToStaticMarkup(component);
 };
 
 module.exports = KendoTemplate;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],2:[function(require,module,exports){
+(function (global){
 /* global kendo */
 
-var React = (window.React);
-var _ = (window._);
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+var ReactDOM = (typeof window !== "undefined" ? window['ReactDOM'] : typeof global !== "undefined" ? global['ReactDOM'] : null);
+var _ = (typeof window !== "undefined" ? window['_'] : typeof global !== "undefined" ? global['_'] : null);
 var reactTags = _.keys(React.DOM);
 
 function mountKendoWidget (component, widget) {
@@ -53,7 +56,7 @@ var KendoWidgetMixin = function (widget) {
     componentDidMount: function () {
       if (this.props.debug) console.log('kendo widget mounting... ', widget);
 
-      this.elem = React.findDOMNode(this);
+      this.elem = ReactDOM.findDOMNode(this);
       this.$elem = $(this.elem);
       this.$widget = mountKendoWidget(this, widget);
 
@@ -132,10 +135,11 @@ var KendoWidgetMixin = function (widget) {
 
 module.exports = KendoWidgetMixin;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],3:[function(require,module,exports){
 (function (global){
-var _ = (window._);
-var React = (window.React);
+var _ = (typeof window !== "undefined" ? window['_'] : typeof global !== "undefined" ? global['_'] : null);
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
 var KendoWidgetMixin = require('./KendoWidgetMixin');
 var widgetMixins = require('./widgets');
 var kendo = global.kendo;
@@ -163,23 +167,30 @@ function buildComponent (widget, name, prefix) {
 var KendoUi = _.mapValues(kendo.ui, function (widget, name) {
   return buildComponent(widget, name, '');
 });
+
+var KendoDataViz = _.mapValues(kendo.dataviz && kendo.dataviz.ui, function (widget, name) {
+  return buildComponent(widget, name, '');
+});
+
 var KendoMobileUi = _.mapValues(kendo.mobile && kendo.mobile.ui, function (widget, name) {
   return buildComponent(widget, name, 'Mobile');
 });
 
 module.exports = _.extend({
     Template: require('./KendoTemplate'),
-    mobile: KendoMobileUi
+    mobile: KendoMobileUi,
+    dataviz: KendoDataViz
   },
   KendoUi
 );
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./KendoTemplate":1,"./KendoWidgetMixin":2,"./widgets":5}],4:[function(require,module,exports){
+(function (global){
 /* global kendo */
 
-var React = (window.React);
-var _ = (window._);
+var React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
+var _ = (typeof window !== "undefined" ? window['_'] : typeof global !== "undefined" ? global['_'] : null);
 
 var Grid = {
   /**
@@ -209,6 +220,7 @@ var Grid = {
 
 module.exports = Grid;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],5:[function(require,module,exports){
 module.exports = {
   Grid: require('./Grid')
