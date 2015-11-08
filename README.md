@@ -143,7 +143,7 @@ var KendoList = React.createClass({
 MIT
 
 ## Maintained By
-##### [<img src='http://i.imgur.com/zM0ynQk.jpg' height='34px'>](http://balderdash.io)
+##### [<img src='http://i.imgur.com/zM0ynQk.jpg' height='36px'>](http://balderdash.io)
 
 [npm-image]: https://img.shields.io/npm/v/react-kendo.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-kendo
